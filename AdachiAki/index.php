@@ -107,44 +107,47 @@
         <section class="contact">
             <h2 id="contact">contact</h2>
             <h3 style="color:#333"><hr>お問い合わせ<hr></h3>
-            <form action="" method="" class="formSec">
+            <p style="color:red; text-align:center; padding: 20px; font-size:20px; font-weight: bolder;">！　制作演習用です。入力しないでください。！</p>
+            <form action="confirm.php" method="post" class="formSec">
                 <div class="form1">
                     <p class="formTitle">お問い合わせ種別<span class="label-danger">必須</span></p>
                     <p class="radioButton">
-                    <label><input type="radio" name="inquiry" value="資料請求"><span class="text3">資料請求</span></label>
-                    <label><input type="radio" name="inquiry" value="ご相談">ご相談</label>
+                    <label><input type="radio" name="inquiry" value="資料請求" id="information"><span class="text3">資料請求</span></label>
+                    <label><input type="radio" name="inquiry" value="ご相談" id="inquiry">ご相談</label>
                     </p>
                 </div>
                 <div class="form2">
                     <p class="formTitle">お名前<span class="label-danger">必須</span></p>
-                    <input type="text" name="user_name" required>
+                    <input type="text" name="name" id="name" required>
                 </div>
                 <div class="form3">
                     <p class="formTitle">フリガナ<span class="label-danger">必須</span></p>
-                    <input type="text" name="furigana">
+                    <input type="text" name="furigana"  id="furigana" required>
                 </div>
                 <div class="form4">
                     <p class="formTitle">電話番号<span class="label-danger">必須</span></p>
-                    <input type="text" name="tel">
+                    <input type="text" name="tel" id="tel" required>
                 </div>
                 <div class="form5">
                     <p class="formTitle">住所<span class="label-danger">必須</span></p>
-                    <p class="postcode">〒<input type="text" name="postcode"></p>
+                    <p class="postcode">〒<input type="text" name="postcode"  id="postcode" required></p>
                 </div>
                 <div class="form6">
-                    <p class="addressText"><input type="text" name="address">
+                    <p class="addressText"><input type="text" name="address"  id="address" required>
                 </div>
                 <div class="form7">
                     <p class="formTitle">メールアドレス<span class="label-danger">必須</span></p>
-                    <input type="email" name="use_mail">
+                    <input type="email" name="mail"  id="mail" required>
                 </div>
                 <div class="form8">
                     <p class="formTitle">メールアドレス(確認用)<span class="label-danger">必須</span></p>
-                    <input type="email" name="use_mail">
+                    <input type="email" name="mail"  id="mail" required>
                 </div>
                 <div class="form9">
-                    <p class="formTitle" style="text-align: center; align-self: start;" >お問い合わせ内容</p><textarea name="message" class="inquiry"></textarea>
+                    <label for="message" class="formTitle" style="text-align: center; align-self: start;" >お問い合わせ内容:</label><br>
+                    <textarea id="message" name="message" class="inquiry" required></textarea><br><br>
                 </div>
+                <p style="color:red; text-align:center; padding: 20px; font-size:20px; font-weight: bolder;">！　制作演習用です。入力しないでください。！</p>
                 <p class="confirmation"><label><input type="submit" value="入力内容を確認する"><span style="color:#fff; font-size:8px;">▶</span></label></p>
             </form>    
         </section>
