@@ -1,0 +1,879 @@
+@charset "utf-8" ;
+
+body {
+  letter-spacing: 0.1em;
+  color: #333333;
+}
+
+img {
+  max-width: 100%;
+}
+
+header {
+  display:flex;
+}
+
+
+h1 img {
+  margin:16px 12px;
+}
+
+/* ここからハンバーガーメニュー */
+.sp_DrawerMenu {
+    position: fixed;
+    right: 0;
+    top: 0;
+    width: 100%;
+    z-index: 99;
+  }
+  /* メニューアイコンを画面右上に固定しています */
+  .sp_DrawerMenu .menu-icon {
+    cursor: pointer;
+    position: absolute;
+    right: 12px;
+    top: 10px;
+    padding-top: 16px;
+    height: 12px;
+  }
+  /* メニューアイコン（三本線）の真ん中の線です */
+  .sp_DrawerMenu .menu-icon .navicon {
+    background: #B71B26; /* 色は自由に変更可能です */
+    display: block;
+    height: 2px; /* 太さ */
+    width: 31px; /* 長さ */
+    position: relative;
+    transition: background .300ms ease-out; /* 形が変わる時のアニメーション */
+  }
+  /* メニューアイコン（三本線）の上と下の線を疑似要素で追加 */
+  .sp_DrawerMenu .menu-icon .navicon::before,
+  .sp_DrawerMenu .menu-icon .navicon::after {
+    background: #B71B26; /* 色は自由に変更可能です */
+    content: '';
+    display: block;
+    height: 100%;
+    position: absolute;
+    transition: all 300ms ease-out; /* 形が変わる時のアニメーション */
+    width: 100%;
+  }
+  .sp_DrawerMenu .menu-icon .navicon::before {top: 10px;} /* 位置を上にずらしています */
+  .sp_DrawerMenu .menu-icon .navicon::after {top: -10px;} /* 位置を下にずらしています */
+  /* 表示されるメニューです */
+  .sp_DrawerMenu .menu {
+    background-color: rgba(255,255,255,0.9);
+    overflow: hidden;
+    max-height: 0; /* ★最初は高さを0にして非表示状態に */
+    transition: max-height .6s; /* 表示されるときのアニメーション */
+    text-align: center;
+  }
+  /* メニュー部分のデザインです */
+  .sp_DrawerMenu .menu li:first-of-type {
+    padding-top: 80px;
+  }
+  .sp_DrawerMenu .menu li a {
+    display: block;
+    padding: 24px 20px;
+    text-decoration: none;
+    text-transform: uppercase;
+  }
+  .sp_DrawerMenu .menu li a:hover {
+    text-decoration: underline;
+  }
+  /* チェックボックスは常に非表示です */
+  .sp_DrawerMenu .menu-btn {
+    display: none;
+  }
+  /* ▼▼▼以下はチェックボックスがONの時の状態です▼▼▼ */
+  .sp_DrawerMenu .menu-btn:checked ~ .menu {
+    max-height: 532px; /* ★チェックボックスがオンの時高さを532pxにして表示させます */
+    transition: max-height .6s;
+  }
+  /* メニューボタンの中央の線を非表示に */
+  .sp_DrawerMenu .menu-btn:checked ~ .menu-icon .navicon {background: transparent;}
+  
+  /* メニューボタンの上下の線を45度傾けて✕印を作ります */
+  .sp_DrawerMenu .menu-btn:checked ~ .menu-icon .navicon::before {transform: rotate(-45deg);top: 0;}
+  .sp_DrawerMenu .menu-btn:checked ~ .menu-icon .navicon::after {transform: rotate(45deg);top: 0;}
+
+ul li a {
+    font-family: Noto Serif JP;
+    font-size:16px;
+}
+/* ハンバーガーメニューここまで */
+
+.pc_menu {
+  display:none;
+}
+
+/* main部分 */
+
+.img-pc {
+  display: none;
+}
+p img {
+  margin-bottom: 48px;
+}
+
+.content {
+  padding: 0 12px;
+}
+
+h2 {
+    font-family: Noto Serif JP;
+    font-size: 28px;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: 8px;
+}
+
+.service figure{
+  text-align: center;
+}
+
+
+
+h3 {
+  display:flex;
+  justify-content: center;
+  color:#223E69;
+  font-family: Noto Serif JP;
+  font-size: 12px;
+  margin-bottom: 24px;
+}
+
+hr{ border:none; /*水平線の境界線を消す*/
+  border-top-style:solid; /*線の種類*/
+  border-top-width:1px; /*線の太さ*/  
+  border-top-color:#223E69; /*線の色*/ 
+  width:60.5px;
+  align-self:center;
+  margin: 0 8px;
+}
+
+.construction {
+  color:#B71B26
+}
+
+.construction hr {
+  border-top-color:#B71B26
+}
+
+h4 {
+  font-weight: 500;
+  font-size: 20px;
+  margin: 0 auto 16px;
+  text-align:center;
+}
+
+.service section dd {
+  margin-bottom: 8px;
+}
+
+.text{
+  font-size: 14px;
+  margin: 8px auto 80px;
+  line-height: 28px;
+}
+
+section dt {
+  font-family: Noto Serif JP;
+  font-weight: 500;
+  font-size: 20px;
+  margin: 8px auto;
+  text-align: center; 
+}
+/* resetcss dt invalid */
+
+.text2 {
+  font-size: 14px;
+  line-height: 21px;
+  margin-bottom: 8px;
+}
+
+.more {
+    font-size: 14px;
+    display: flex;
+    justify-content: end;
+ }
+
+ .triangle{
+  border-left: 5px solid black;
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+  margin-left:5px;
+  /* align-self: center; */
+}
+
+
+/* .triangle{
+  display: inline-block;
+  width: 1px;
+  height: 1px;
+} */
+
+/* .more::after {
+  content:"▶";
+  width:4.75px;
+  height:9.5px;
+} */
+
+.more a:hover{
+  text-decoration: underline #333 1px;
+}
+
+section {
+  margin-bottom: 48px;
+}
+
+/* .flow {
+  background-color: #223E69;
+  opacity: 0.1;
+} */
+
+ol li {
+  background-color: #333;
+  color:#fff;
+  font-size: 16px;
+  font-weight: 500;
+  /* border:1px solid #333; */
+  border-radius: 32px;
+  width:300px;
+  padding: 8px 0;
+  text-align: center;
+  margin: 0 auto;
+}
+
+/* .triangle2{ 
+  color: RGBA(183,27,38,0.6);
+  margin: 0 auto;
+  text-align: center;
+  transform:scaleX(1.7);
+}
+  */
+
+.flow {
+  background-color: RGBA(34,62,105,0.05);
+  padding-bottom: 16px;
+  padding-top:16px;
+  margin-top: 80px;
+}
+
+.triangle2, .triangle3, .triangle4, .triangle5, .triangle6{
+  width: 0;
+  height: 0;
+  border-left: 20px solid transparent;
+  border-right: 20px solid transparent;
+  border-top: 20px solid rgba(183,27,38,60%);
+  margin: 8px auto;
+}
+
+.triangle3 {
+  border-top: 20px solid rgba(183,27,38,70%);
+}
+.triangle4 {
+  border-top: 20px solid rgba(183,27,38,80%);
+}
+.triangle5 {
+  border-top: 20px solid rgba(183,27,38,90%);
+}
+.triangle6 {
+  border-top: 20px solid rgb(183,27,38);
+}
+
+.QandA {
+  margin: 80px 12px;
+}
+
+
+.QandA dt{
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  font-size: 16px;
+  line-height: 24px;
+}
+.QandA dd{
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: .1em;
+}
+
+
+
+
+dl dt .QuestionIcon, .AnswerIcon {
+  font-family: Noto Serif JP;
+  font-weight: bold;
+  font-size: 20px;
+  color:#fff;
+  letter-spacing: 0;
+  border:1px solid #333;
+  background-color: #333;
+  border-radius: 52px;
+  width:36px;
+  height:36px;
+  padding: 3px 0;
+  margin: 0 8px 0 0;
+  flex-shrink: 0;
+  align-self: flex-start;
+  text-align: center;
+}
+
+/* reset.css,dt-font.bold 解除 */
+
+dl dd .AnswerIcon {
+  background-color: #B71B26;
+  border:1px solid #B71B26;
+}
+
+
+/* dt,ddでフォントが変わる理由
+HTMLで定義リストの構造を明確にするためのものであるため、ブラウザがその役割を反映して表示する
+か、reset.cssの影響*/
+
+/* .QandA {
+ display: flex;
+ flex-wrap: wrap;
+ width: 100%; 
+}
+
+.QandA dt {
+  width: 30%;
+  padding-bottom: 20px;
+  margin-bottom: 10px;
+  background-color: #DADADA;
+}
+
+.QandA dd {
+  width: 70%;
+  padding-bottom: 20px;
+  background-color: #F3F3F3;
+  margin-bottom: 10px;
+} */
+
+
+/* form section */
+
+.contact {
+  background-color: RGBA(34,62,105,0.15);
+  padding: 16px 12px;
+}
+
+.formSec {
+  font-size: 16px;
+  font-weight: bold;
+  line-height: 16px;
+  text-align: center;
+}
+.formTitle{
+  margin-bottom: 10px;
+}
+
+.label-danger {
+  background-color: #B71B26;
+  padding: 4px 9.5px;
+  color:#fff;
+  font-size: 10px;
+  font-weight: bold;
+  letter-spacing: .1em;
+  border-radius: 16px;
+  text-align: center;
+  margin-left: 4px;
+  vertical-align: bottom;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+  border: 1px solid #fff;
+  background-color:#fff;
+  width: 100%;
+  height: 30px;
+  margin: 0 0 24px;
+  text-align: start;
+}
+
+.radioButton{
+  width:186px;
+  display: flex;
+  justify-content:space-between;
+  margin:16px auto 24px;
+}
+
+label {
+  font-size:14px;
+  font-weight:normal;
+}
+
+/* ↓ラジオボタンのみ適応*/
+input[type="radio"]{
+  appearance: none;
+  background-color: white;
+  width:16px;
+  height:16px;
+  border-radius: 50%;
+  margin-right:4px;
+}
+
+input[type="radio"]:checked{
+  background-color: #223E69; /* 選択時の背景色 */
+  border: 7px solid #fff; /* 選択時の枠線の色 */
+}
+
+
+
+.postcode {
+  display:flex;
+  align-items:center;
+  font-size: 14px;
+  font-weight: 400;
+  margin-bottom: 8px;
+}
+
+.postcode input[type="text"] {
+  width: 125px;
+  margin: auto 0;
+}
+
+.inquiry {
+  height:120px;
+}
+
+.confirmation{
+  background-color:#333;
+  height: 48px;
+  width:200px;
+  margin:0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+input[type=submit]{
+  font-size:16px;
+  font-family: Noto Serif JP;
+  font-weight:bold;
+  color:#fff;
+  letter-spacing: .1em;
+  padding: 5px;
+}
+
+/* .under {
+  height: 126px;
+} */
+
+.top img {
+  height:15px;
+  width:30px;
+  background-color: #333;
+}
+
+.under {
+  margin:80px 12px 0;
+  display: flex;
+  justify-content: end;
+}
+
+.page_top_btn {
+  /* position: relative;
+  left: 317px;
+  bottom: -90px; */
+  padding: 15px 8px;
+  background: #333;
+  }
+
+/* .top {
+  width: 45px;
+  height: 45px;
+  display: block;
+  display: flex;
+  justify-content: flex-end;
+  background-color:#333;
+  padding:15px 15px;
+  margin:0 right;
+} */
+
+/* .arrow{
+  width: 30px;
+  height: 30px;
+  border: 2px solid;
+  border-color: #fff #fff transparent transparent;
+  transform: rotate(-45deg); 
+  
+  borderタグで創るのあきらめ
+  一緒にtransparentするため*/
+
+
+
+
+
+
+/* .arrow{
+  width: 30px;
+  height: 30px;
+  border: 2px solid;
+  border-color: #fff #fff transparent transparent;
+  transform: rotate(-45deg);
+}
+
+.top{
+  width:46px;
+  height:48px;
+  background-color:#333;
+  margin: 0 left;
+} */
+
+
+footer {
+  background-color:#333333;
+  font-family: Noto Serif JP;
+  color:#fff;
+  font-size: 12px;
+  text-align:center;
+  padding:16px 10px 17px;
+}
+
+
+
+
+  /* ここからメディアクエリ */
+@media screen and (min-width: 768px)
+{
+
+header {
+    padding: 24px;
+  }
+
+/* a:hover {
+    text-decoration: underline;
+  } */
+
+
+.pc_menu .menu a{
+    position: relative;
+    display: inline-block;
+    transition: .3s;
+  }
+  
+  .pc_menu .menu a::after {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    content: '';
+    width: 0;
+    height: 1px;
+    background-color: #333;
+    transition: .3s;
+    transform: translateX(-50%);
+  }
+  
+  .pc_menu .menu a:hover::after{
+    width: 100%;
+  }
+
+
+h1 img {
+    width: 400px;
+    margin: auto;
+  }
+
+.img-sp {
+    display: none;
+}
+.img-pc {
+    display: block;
+    width: 100%;
+}
+
+.content, service, .QandA {
+  max-width: 1020px;
+  margin: 160px auto;
+}
+
+.flow h2 {
+  margin:0 0 15px;
+}
+
+.sp_DrawerMenu  {
+  display: none;
+}
+
+.pc_menu {
+  display: flex;
+  width: 100%;
+  justify-content: flex-end;
+}
+
+.menu {
+  display: flex;
+}
+
+.pc_menu .menu li{
+  padding-left: 40px;
+}
+
+h2 {
+  font-size:42px;
+  margin-top: 160px;
+}
+
+h3 {
+  font-size: 16px;
+  margin-bottom: 48px;
+}
+
+h4 {
+  font-size: 28px;
+}
+
+.text{
+  font-size: 16px;
+  line-height: 32px;
+}
+
+
+.service {
+  display: flex;
+  justify-content: space-between;
+}
+
+.service section{
+  width: 300px;
+  margin-bottom:0;
+}
+
+.text2 {
+  line-height: 24px;
+}
+
+.living {
+  margin: 0 20px;
+}
+
+.flow {
+  padding: 48px 0;
+}
+
+.flow ol {
+  width: 920px;
+  margin:0 auto;
+  display: flex;
+  justify-content: center;
+}
+
+.flow ol li {
+    writing-mode: horizontal-tb;
+    background-color: #333;
+    color:#fff;
+    font-size: 28px;
+    border:1px solid #333;
+    border-radius: 32px;
+    width:60px;
+    height: 280px;
+    display: flex;
+    align-items: center;
+    padding: 0 16px;
+}
+
+.triangle2, .triangle3, .triangle4, .triangle5, .triangle6 {
+  transform: rotate(-90deg);
+  margin:auto 0;
+}
+
+.triangle2, .triangle3, .triangle4, .triangle5, .triangle6{
+  border-left: 30px solid transparent;
+  border-right: 30px solid transparent;
+  border-top: 30px solid rgba(183,27,38,60%);
+}
+
+.triangle3 {
+  border-top: 30px solid rgba(183,27,38,70%);
+}
+.triangle4 {
+  border-top: 30px solid rgba(183,27,38,80%);
+}
+.triangle5 {
+  border-top: 30px solid rgba(183,27,38,90%);
+}
+.triangle6 {
+  border-top: 30px solid rgb(183,27,38);
+}
+
+#QandA {
+  margin-bottom:16px;
+}
+.QandAtext {
+  font-size: 20px;
+  line-height: 30px;
+}
+
+.QandA dt, dd {
+  font-size: 20px;
+  line-height: 30px;
+}
+
+dl dt .QuestionIcon{
+  font-size: 34px;
+  width: 52px;
+  height: 52px;
+  padding: 5px 0 0;
+}
+dl dd .AnswerIcon{
+  font-size: 34px;
+  width: 52px;
+  height: 52px;
+  padding: 5px 0 0;
+}
+
+.contact h2 {
+  margin-top: 48px;
+}
+.contact {
+ padding-bottom: 48px;
+}
+
+
+.formSec {
+  padding: 24px 0 48px;
+  width:1020px;
+  background-color: rgba(255,255,255,50%);
+  margin:0 auto;
+}
+
+.form1, .form2, .form3, .form4, .form5, .form6, .form7, .form8{
+  display: flex;
+  /* height:52px; */
+  margin:24px 0;
+}
+
+
+.form9 {
+  display: flex;
+}
+
+.formTitle {
+  font-size: 20px;
+  text-align: end;
+  align-self: center;
+  flex-basis: 30%;
+  margin:0;
+}
+
+.label-danger {
+  padding: 0px 10px;
+  font-size: 16px;
+  border-radius: 8px;
+  margin-left: 8px;
+}
+
+.radioButton {
+  margin: auto 0;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.radioButton label {
+  font-size: 20px;
+  margin-right: 40px;
+}
+
+.text3 {
+ font-size:20px;
+}
+
+/* input[type="text"] {
+  width:332px;
+  height:52px;
+} */
+
+input[type="text"],
+input[type="email"],
+textarea {
+  border: 1px solid #fff;
+  background-color:#fff;
+  width: 300px;
+  height:52px;
+  margin:0 12px;
+}
+
+input[type="email"], .inquiry {
+  width: 664px;
+  /* overflow: scroll; */
+}
+
+
+.radioButton, .postcode{
+  width: 65%;
+  margin: 0 12px;
+}
+
+input[type="radio"] {
+  width:24px;
+  height:24px;
+}
+
+.form6::before {
+  content:" ";
+  flex-basis: 30%;
+}
+
+.postcode {
+  font-size:20px
+}
+
+.postcode input[type="text"] {
+  width: 222px;
+  height: 52px;
+}
+
+.addressText input[type="text"] {
+  width: 664px;
+  /* position:absolute;
+  right:30%; */
+}
+
+.page_top_btn {
+  height: 60px;
+  width: 60px;
+  margin-right: 12px;
+}
+
+.confirmation {
+  width:300px;
+  height:68px;
+  margin:48px auto 0;
+}
+
+
+input[type="submit"] {
+  font-size:20px;
+  align-items: center;
+  padding: 5px;
+}
+
+input[type="submit"]:hover {
+  margin-left:20px;
+  transition-property: margin-left;
+  transition-duration: 300ms;
+  transition-timing-function: ease-out;
+  transition-delay: 0ms;
+}
+
+
+.under {
+  margin:160px 12px 0;
+}
+
+.under img {
+  width: 100%;
+  height: 100%;
+}
+
+footer {
+  font-size:14px;
+}
+
+}
